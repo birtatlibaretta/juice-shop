@@ -1,0 +1,14 @@
+name: "Container Image Scan"
+
+on: [push, pull_request]
+
+jobs:
+  trivy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Set up Trivy
+      uses: aquasecurity/trivy-action@master
+    - name: Trivy Scan
+      run: trivy image [YOUR_IMAGE_NAME]
