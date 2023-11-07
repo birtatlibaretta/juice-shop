@@ -1,0 +1,14 @@
+name: Source Code Analysis
+
+on: [push, pull_request]
+
+jobs:
+  sca:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Run SCA Tool
+      run: |
+        
+      
